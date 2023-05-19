@@ -12,7 +12,7 @@ try {
 
 //フォームを打ち込んだとき
 if (!empty($_POST["submitButton"])) {
-    $created_at = date("Y-m-s H:i:s");
+    $created_at = date("Y-m-d H:i:s");
     try {
         $stmt = $pdo->prepare("INSERT INTO `bbs-table` (`username`, `comment`, `created_at`) VALUES (:username, :comment, :created_at)");
         $stmt->bindParam(':username', $_POST['username'], PDO::PARAM_STR);
